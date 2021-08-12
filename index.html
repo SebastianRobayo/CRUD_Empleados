@@ -20,6 +20,24 @@
                         Empleados
                     </div>
                     <div class="card-body">
+
+                        <form action="javascript:void(0);" method="post">                            
+                            <div class="mb-3">
+                              <label for="" class="form-label">Nombre:</label>
+                              <input type="text"
+                                class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del empleado">                              
+                            </div>
+
+                            <div class="mb-3">
+                              <label for="correo" class="form-label">Correo:</label>
+                              <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelpId" placeholder="Correo del empleado">                              
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Agregar empleado</button>       
+
+                        </form>
+
+                        
                         
                     </div>
                     
@@ -37,14 +55,8 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>ID</td>
-                            <td>Sebastian</td>
-                            <td>sebastianrobayog@gmail.com</td>
-                            <td>Editar | Borrar</td>
-                        
-                    </tbody>
+                    <tbody id="empleados"></tbody>                            
+                    
                 </table>
                 
             </div>
@@ -52,6 +64,22 @@
         </div>
 
     </div>
+
+    <script>
+        var aplicacion = new function(){
+            this.empleados=document.getElementById("empleados");
+
+            this.leer=function(){
+                var datos="";
+                datos="<tr><td>ID</td><td>Sebastian</td><td>sebastianrobayog@gmail.com</td><td>Editar | Borrar</td></tr>";
+
+                return this.empleados.innerHTML=datos;
+            }
+
+
+        }
+        aplicacion.leer();
+    </script>
     
 </body>
 </html>
